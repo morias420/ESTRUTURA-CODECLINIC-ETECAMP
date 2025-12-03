@@ -1,0 +1,59 @@
+﻿CodeClinic: Desenvolvimento de um Monitor Multiparamétrico de Baixo Custo
+
+
+Descrição
+O CodeClinic é um sistema que inclui o desenvolvimento de um monitor multiparamétrico de baixo custo para o curso técnico de Enfermagem da ETEC de Campo Limpo Paulista. O projeto busca solucionar a carência de recursos tecnológicos adequados para as aulas práticas, que é apontada como a principal limitação para a efetividade do ensino prático na instituição.
+O sistema integra um protótipo de hardware (utilizando Arduino, ESP32 e sensores para ECG, oximetria e temperatura) a uma interface web intuitiva. Ele permite que professores criem simulações realistas de cenários clínicos, personalizando ou utilizando simulações pré-definidas (como Parada Cardiorrespiratória e Hipoxemia), e monitorem sinais vitais simulados como Frequência Cardíaca (FC), Saturação de Oxigênio ($SpO_2$), Temperatura (TEMP) e Pressão Arterial (PA) em tempo real. O objetivo é fortalecer a aprendizagem prática dos alunos, aumentando a assimilação dos conteúdos e preparando-os para o exercício profissional.
+Equipe
+* Otávio Pierobon de Souza Bemi — Desenvolvedor
+* Júlia Morais da Silva Santos — Desenvolvedora
+* Caetano Pavesi dos Oros — Desenvolvedor
+Tecnologias Utilizadas
+O projeto utiliza um conjunto de tecnologias de hardware e software:
+* Hardware / Microcontroladores:
+   * Arduino
+   * ESP32
+   * Raspberry Pi (Minicomputador/Servidor)
+* Sensores:
+   * Sensor AD8232 (Monitoramento Cardíaco/ECG)
+   * Sensores para ECG, oximetria e temperatura
+* Frontend Web:
+   * HTML
+   * CSS
+   * JavaScript (Versão não especificada, mas necessário para a interface web)
+* Backend Web:
+   * Python
+   * Flask (Framework Python para servidor web)
+   * Node.js
+* Design/Prototipagem:
+   * Figma
+
+
+Algumas imagens para demonstrar o site desenvolvido
+Página Inicial (Centro de Navegação)
+Descrição da Imagem: CodeClinic Página Inicial, que contém as seções Simulação Personalizada, Simulações Prontas e Monitoramentos Salvos.
+A Página Inicial atua como centro de navegação, permitindo ao professor acessar as funcionalidades principais do sistema: Simulação Personalizada (para criar um cenário do zero), Simulações Prontas (cenários de emergência pré-definidos) e Monitoramentos Salvos (histórico de simulações registradas).
+Tela de Simulação (Visualização do Monitor)
+Descrição da Imagem: CodeClinic Simulação mostrando SpO2 84.6%, FC 123 BPM, TEMP 36.7°C, PA 95/56 mmHg e um gráfico de ECG.
+Esta tela simula a visualização do monitor multiparamétrico durante uma sessão, exibindo os principais sinais vitais em tempo real. Os dados são apresentados em cards coloridos, incluindo Saturação de Oxigênio ($SpO_2$), Frequência Cardíaca (FC), Temperatura (TEMP), Pressão Arterial (PA) e o gráfico de Eletrocardiograma (ECG).
+
+
+Como executar o projeto (passo-a-passo)
+A execução do projeto envolve a configuração do hardware (Módulos 1 e 2) e o software da aplicação web (Módulo 3).
+1. Preparação do Hardware (Módulos 1 e 2)
+1. Conectar Sensores: Conecte o sensor de monitoramento cardíaco (AD8232) e outros sensores (oximetria, temperatura) ao microcontrolador ESP32 (ou equivalente).
+2. Configurar Exibição Inicial: Conecte a tela OLED ao microcontrolador para apresentar informações básicas imediatas (como a frequência cardíaca).
+3. Programar ESP32: Desenvolva e carregue o código no ESP32 para que ele possa realizar a leitura dos sinais fisiológicos dos sensores e processar os dados para integração com o servidor web (Módulo 3). O ESP32 atua como unidade de integração à internet.
+2. Configuração do Servidor Web (Módulo 3)
+1. Montar o Servidor: Utilize o minicomputador Raspberry Pi para hospedar a aplicação web.
+2. Instalar Flask e Python: Certifique-se de que o Python e o framework Flask estejam instalados no Raspberry Pi para facilitar a criação do servidor e a definição de rotas.
+3. Instalar Dependências: Instale as demais dependências do projeto e bibliotecas necessárias para a interface web (HTML, CSS).
+4. Integração de Dados: Configure a aplicação Flask para receber os dados do ESP32 (Módulo 2), processá-los e disponibilizá-los na plataforma digital CodeClinic.
+3. Acesso à Aplicação Web CodeClinic
+1. Acessar a Aplicação: Utilize um navegador no Raspberry Pi (ou em outro dispositivo conectado à mesma rede) para acessar o site CodeClinic.
+2. Login/Cadastro: Realize o cadastro preenchendo o e-mail institucional, número de registro (RM), nome completo e senha. Em seguida, efetue o login para acessar o sistema.
+3. Iniciar Simulação: Na página inicial, selecione "Simulação Personalizada" para configurar novos parâmetros ou "Simulações Prontas" para cenários pré-definidos.
+4. Monitoramento: Ao iniciar a simulação, os dados serão exibidos na tela do monitor e poderão ser acompanhados em tempo real na interface web.
+
+
+BEMI, Otávio Pierobon de Souza et al. Desenvolvimento de um Monitor Multiparamétrico de Baixo Custo para o Curso de Enfermagem da ETEC de Campo Limpo Paulista. 2025. Trabalho de Conclusão de Curso (Curso Técnico em Informática para a Internet Integrado ao Ensino Médio) – ETEC de Campo Limpo Paulista, Centro Paula Souza, Campo Limpo Paulista, 2025.
